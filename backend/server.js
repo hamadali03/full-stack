@@ -9,7 +9,7 @@ import Database from "./config/ConnectDB.js"
 const app=express()
 
 
-dotenv.config();
+// dotenv.config();
 
 Database()
 //middleware
