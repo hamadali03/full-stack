@@ -9,7 +9,7 @@ import Database from "./config/ConnectDB.js"
 const app=express()
 
 
-// dotenv.config();
+dotenv.config();
 
 Database()
 //middleware
@@ -23,7 +23,9 @@ app.use(upload.none());
  
 app.use('/api/user',userRoute)
 
-
+app.get('/',(req,res)=>{ 
+   res.status(401).json({success:true,message:"Server running for API"})
+})
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server Running On The Port ${process.env.PORT}`)
